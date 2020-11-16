@@ -193,7 +193,7 @@
 		margin: 0;
 		padding: 0;
 		display: block;
-		margin-top: -5px;
+		//margin-top: -5px;
 		font-size: 1.8em;
 		font-weight: 700;
 	}
@@ -524,9 +524,10 @@
 	.new{
 		float: left;
 		width: 248px;
-		border: 1px solid rgba(0,0,0,0.03);
+		border: 1px solid rgba(0,0,0,0.15);
+		border-radius: 5px;
 		margin-right: 20px;
-		height: 500px;
+		height: 450px;
 	}
 
 	.new:last-child{
@@ -565,8 +566,9 @@
 		color: #2D2D2D;
 	}
 	.new p{
+		font-size: 0.8em;
 		padding: 0 5px;
-		line-height: 1.4em
+		line-height: 1.6em
 	}
 /*********************************************************************************/
 /* Featured                                                                      */
