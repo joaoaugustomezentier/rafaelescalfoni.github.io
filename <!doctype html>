@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <h1>Conversor de Moedas</h1>
+    
+    
+</body>
+<script>
+
+    var cotacao = 5.2547
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <h1>Conversor de Moedas</h1>
+    
+    <input type="number" id="ip_real" placeholder="Valor em Real" />
+    <h3 id="cotacao"></h3>
+    <button onClick="converte()">Converter</button>
+</body>
+<script>
+    function converte(){
+        var cotacao = 5.2547;
+        var valReal = parseFloat(document.getElementById("ip_real").value);
+        x = valReal/cotacao;
+        document.getElementById("cotacao").innerHTML = x;
+
+    }
+    
+</script>
+</html>
