@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Teste</title>
+</head>
+<body>
+	<h1>Massa Fresca Caseira - <em>Grano Duro</em></h1>
+
+	<h3>Ingredientes</h3>
+	<ul>
+		<li><span id="qtd_tenero">100</span>g de farinha de trigo</li>
+    	<li><span id="qtd_duro">300</span>g de farinha de sêmola</li>
+    	<li><span id="qtd_ovos">4</span> ovos</li>
+    	<li>A receita renderá <span id="rendimento_massa">550</span> g de massa </li>
+    </ul>
+
+    <h3>Modo de Preparo</h3>
+
+    <ol>
+    	<li>Peneire as farinhas e misture-as. </li>
+    	<li>Em uma tigela grande quebre os 4 ovos e bata os ovos levemente. </li>
+    	<li>Junte metade da farinha aos ovos e misture, vá adicionando a farinha aos poucos até que a massa se solte das mãos.</li>
+    	<li>Coloque em saco plástico e deixe descansar por 20 minutos na geladeira.</li>
+    	<li>Após este tempo retire da geladeira e divida a massa em duas ou quatro partes. </li>
+    	<li>Se você for abrir com um rolo de macarrão separe em quatro partes, se você for abrir em um cilindro próprio para massas pode dividir em duas.</li>
+    	<li>Abra a massa até a espessura desejada e corte no formato desejado, podendo ser talharim, linguini, papardelle ou qualquer outro que desejas.</li>
+    	<li>Espalhe farinha sobre a superfície em que for abrir a massa e no cilindro, abra a massa até a espessura desejada. A cada vez que passar a massa no rolo ou cilindro espalhe farinha na massa.</li>
+    	<li>Após cortada, enrole porções da massa em "ninhos" e jogue farinha para que não grudem.</li>
+    </ol> 
+   	
+   	<h3>Anotações</h3>
+   	<p>Ao terminar cozinhe em água fervente.</p>
+
+   	<input type="number" id="grano" placeholder="Proporção de Farinha">
+   	
+   	<select id="tipo_farinha">
+   		<option value="1">Farina Grano Tenero</option>
+   		<option value="2">Farina Grano Duro</option>
+   	</select>
+   	
+
+   	
+</body>
+<script>
+	/*
+		100g tenero + 300g duro + 4 ovos --> 550g de massa fresca
+
+		se a entrada for referente a farinha grano tenero:
+		//proporção de farinha grano duro necessária
+		100      -  300
+		input        y   >>   y = 300/100 * x => y = 3 * x
+
+		//proporção de ovos necessária
+		100      - 4
+		input      y     >>   y = 4/100 * x 
+
+		//proporção de massa fresca resultante
+		100 macio - 550
+		input        y	 >>	  y = 550/100 * x => 5.5 * x
+
+		---------------------------------------------------
+		Se a entrada for de farinha grano duro:
+
+		//proporção de farinha grano tenero necessária
+		300      -  100   
+		input        y   >>   y = 100/300 * x => y = 1/3 * x
+
+		//proporção de ovos necessária
+		300      - 4
+		input      y     >>   y = 4/300 * x 
+
+		//proporção de massa fresca resultante
+		300 	 - 550
+		input        y	 >>	  y = 550/300 * x => 55/30 * x
+	*/
+
+	var inputFarinha = document.getElementById("grano");
+	var spanQtdTenero = document.getElementById("qtd_tenero");
+	var spanQtdDuro = document.getElementById("qtd_duro");
+	var spanOvos = document.getElementById("qtd_ovos");
+	var spanRendimentoMassa = document.getElementById("rendimento_massa");
+	var selectFarinha = document.getElementById("tipo_farinha");
+
+	inputFarinha.onchange = function(){
+		console.log(selectFarinha.value);	
+		var farinha = parseFloat(inputFarinha.value);
+		var proporcaoDuro, proporcaoTenero, proporcaoOvos, proporcaoMassa;
+		if(selectFarinha.value=="1"){
+			/// farinha tenero
+			proporcaoTenero = farinha;
+			proporcaoDuro = 3 * proporcaoTenero;
+			proporcaoOvos = 4/100 * proporcaoTenero;
+			proporcaoMassa =  5.5 * proporcaoTenero;
+		} else {
+			// farinha grano duro
+			proporcaoDuro = farinha;
+			proporcaoTenero = 1/3 * proporcaoDuro;
+			proporcaoOvos = 4/300 * proporcaoDuro;
+			proporcaoMassa =  55/30 * proporcaoDuro;
+		}
+		spanQtdTenero.innerHTML = proporcaoTenero;
+		spanQtdDuro.innerHTML = proporcaoDuro;
+		spanOvos.innerHTML = proporcaoOvos;
+		spanRendimentoMassa.innerHTML = proporcaoMassa;
+	}
+	
+</script>
+</html>
