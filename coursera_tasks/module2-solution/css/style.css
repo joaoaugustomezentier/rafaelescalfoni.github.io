@@ -1,0 +1,94 @@
+* {
+    font-family: Verdana, Arial, "sans-serif";
+}
+
+section {
+    position: relative;
+    width: 90%;
+    margin:0 auto;
+}
+.row {
+    width: 100%;
+    padding:0 auto;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    background-color: #aaa;
+    border: 2px solid #000;
+    padding: 35px 15px 15px;
+}
+
+p > span {
+    text-align:center;
+    display:block;
+    border: 2px solid #000;
+    width: 100px;
+    position: absolute;
+    padding: 3px 10px;
+    top:0;
+    right:0;
+}
+
+.chicken {
+    background-color: rgb(200, 139, 143) ;
+}
+
+.beef {
+    background-color: rgb(174, 55, 63) ;
+    color: #fff;
+}
+
+.sushi {
+    background-color: rgb(219, 213, 143) ;
+    
+}
+
+@media (min-width:992px){
+    p > span {
+        top: 16px;
+        right:0px;
+    }
+    .col-lg-4:first {
+        margin-left:0;
+    }
+    .col-lg-4:last{
+        margin-right: 0;
+    }
+    .col-lg-4 {
+        float:left;
+        width: 30%;
+        margin: 10px 1%;
+    }
+
+}
+
+@media (min-width:768px) and (max-width:991px){
+    p > span {
+        top: 31px;
+        right:15px;
+    }
+
+    .col-md-6, .col-md-12 {
+        float:left;
+        box-sizing: border-box;
+        padding: 15px 15px 0;
+    }
+    .col-md-6 {
+        width: 50%;
+    }
+    .col-md-12 {
+        width: 100%;
+    }
+
+    .col-md-6:first-child {
+        margin-left:0;
+    }
+    .col-md-6:last-child{
+        margin-right: 0;
+    }
+}
