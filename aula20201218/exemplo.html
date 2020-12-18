@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        function adicionaFilme(filme){
+            var objSection = $("<section>");
+            var objTitulo = $("<h3>");
+            var objResumo = $("<p>");
+            var objPoster = $("<img>");
+            var objElenco = $("<ul>");
+            objTitulo.text(filme.titulo);
+            objResumo.text(filme.resumo);
+            objPoster.attr("src", filme.figura);
+            objSection.addClass("filme");
+            objElenco.addClass("filme-elenco");
+            objSection.append(objTitulo);
+            objSection.append(objResumo);
+            objSection.append(objPoster);
+            $.each(filme.elenco, function(idx, ator){
+                var objAtor = $("<li>");
+                objAtor.text(ator);
+                objElenco.append(objAtor);
+            });
+            objSection.append(objElenco);
+            $("#filmes").append(objSection);
+        }
+
+        $(function(){
+            var url = "http://rafaelescalfoni.net/filmes.php";
+            $.get(url, function(data, status){
+                lista = JSON.parse(data);
+                
+                $.each(lista, function(indice, filme){
+                    adicionaFilme(filme);
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Catálogo de Filmes</h1>
+    <div id="filmes">
+        <section class="filme">
+            <h3>Titulo do Filme</h3>
+            <p>resumo</p>
+            <img src="">
+            <ul class="filme-elenco">
+
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
