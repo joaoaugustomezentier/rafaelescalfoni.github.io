@@ -17,24 +17,45 @@ function removerLivro(livro){
 }
 
 var listaLivros = [];
-
-// carregamento de cardápio de exemplo
-var cardapio = [Produto(1, "Capuccino", 1, 7)
-			, Produto(2, "Espresso", 1, 4)
-			, Produto(3, "Fraputino", 1, 8)
-			, Produto(4, "Chocotino", 1, 7)
-			, Produto(5, "Chocolate Quente", 1, 10)
-			, Produto(6, "Frapê", 1, 12)
-			, Produto(7, "Suco de Laranja", 1, 10)
-			, Produto(8, "Açaí", 1, 12)];
 		
 $(function(){
-			
-	$("#adicionar").click(function(){
 
+	$("#adicionar").click(function(){
+		var tituloLivro = $("#titulo").val();
+		var autores = $("#autores").val();
+		var estilo = $("#estilo").val();
+		$("#acervo").append(
+				$("<tr>")
+					.append($("<td>").text(tituloLivro))
+					.append($("<td>").text(autores))
+					.append($("<td>").text(estilo))
+					.append($("<td>")
+						.append($("<a>")
+								.attr("href", "#")
+								.text("Apagar"))
+					)
+		)
+		$("#titulo").val("");
+		$("#autores").val("");
+		$("#estilo").val("");
 	});
+
+	$("#acervo").on("click", "a", function(){
+		$(this).parents("tr").remove();
+	})
 
 	$("#excluir").click(function(){
 		
+	})
+
+	$("#apagarAcervo").click(function(){
+		$("#acervo").empty();
+		$("#acervo")
+			.append($("<tr>")
+						.append($("<th>").text("Título"))
+						.append($("<th>").text("Autores"))
+						.append($("<th>").text("Estilo"))
+						.append($("<th>").text(""))
+					)
 	})
 });
