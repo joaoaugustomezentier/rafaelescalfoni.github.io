@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Skeleton 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130902
+
+-->
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" >
+	<title>Rafael Escalfoni | Design Web</title>
+	<meta name="keywords" content="Professor, Pesquisador" />
+	<meta name="description" content="" />
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+	<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-17TVKJLFYM"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-17TVKJLFYM');
+	</script>
+	<script src="js/jquery.min.js"></script>
+
+	<script>
+		$(function(){
+			/*
+			$("#jquery_exemplo2").mouseover(function(){
+				$(this).css('background-color', '#dc143c');
+			});
+			$("#jquery_exemplo2").mouseleave(function(){
+				$(this).css('background-color', '#6495ed');
+			});
+			*/
+			$(".exemplo").on({
+				mouseover:function(){
+					$(this).css('background-color', '#dc143c');
+				},
+				mouseleave:function(){
+					$(this).css('background-color', '#6495ed');
+				}
+			});
+			$("#bt3_ocultar").click(function(){
+				$(".exemplo").hide();
+			})
+			$("#bt3_aparecer").click(function(){
+				$(".exemplo").show(200);
+			})
+			$("#bt3_revezar").click(function(){
+				$(".exemplo").toggle(500);
+			})
+				
+			$("#bt4_ocultar").click(function(){
+				$(".exemplo").fadeOut();
+			})
+			$("#bt4_aparecer").click(function(){
+				$(".exemplo").fadeIn(200);
+			})
+			$("#bt4_revezar").click(function(){
+				$(".exemplo").fadeToggle(500);
+			})
+
+			$("#bt5_ocultar").click(function(){
+				$(".exemplo").slideDown();
+			})
+			$("#bt5_aparecer").click(function(){
+				$(".exemplo").slideUp(200);
+			})
+			$("#bt5_revezar").click(function(){
+				$(".exemplo").slideToggle(500);
+			})
+			
+		})
+	</script>
+
+	<style>
+		.exemplo {
+			border: #333 1px solid;
+			width: 90px;
+			height: 90px;
+			font-size:0.7em;
+			color: #fff;
+			background-color: #6495ed;
+		}
+	</style>
+</head>
+<body>
+<div id="page" class="container">
+	<header id="header">
+		<div id="logo">
+			<img src="../images/pic02.jpg" alt="Professor Rafael Escalfoni" />
+			<h1><a href="#">Rafael Escalfoni</a></h1>
+			<span>CEFET/RJ <a href="http://www.cefet-rj.br/index.php/bacharelado-sistemas-informacao-nova-friburgo" rel="nofollow">Nova Friburgo</a></span>
+		</div>
+		<nav id="menu">
+			<ul>
+				<li><a href="../index.html" accesskey="1" title="">Início</a></li>
+				<li class="current_page_item"><a href="../ensino.html" accesskey="2" title="Ensino">Ensino</a></li>
+				<li><a href="../pesquisa.html" accesskey="3" title="Pesquisa">Pesquisa</a></li>
+				<li><a href="../extensao.html" accesskey="4" title="Extensão">Extensão</a></li>
+				<li><a href="../alunos.html" accesskey="5" title="Alunos">Alunos</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main id="main">
+		<div id="banner">
+			<img src="../images/javascript.jpg" class="image-full" />
+		</div>
+		<div id="welcome">
+			<div class="title">				
+				<h2>Programação de Clientes Web - 2020</h2>
+				<span class="byline">Horário das reuniões: quartas-feiras, 10:55 - 11:35</span>
+			</div>
+			<nav class="breadcrumb">
+				<span class="byline"><a href="../ensino.html">Ensino</a> >> <a href="../design-web-2020_1.html">Design Web</a> >> Aula 5</span>
+			</nav>
+			<h3>Aula 11 - jQuery</h3>
+			<p>
+				Nesta aula, iremos apresentar o framework jQuery.
+            </p>
+            <h3>Vídeo aula</h3>
+            <p>
+                Assista a vídeo aula disponível no <a href="https://web.microsoftstream.com/video/1f1354f7-6163-4936-8b09-0c939aa56464">link</a>. 
+            </p>
+            <p>
+                Bons estudos e até quarta!
+            </p>
+            
+			<h3>Fontes Recomendadas</h3>
+			<p>
+				Os alunos devem acompanhar os materiais de apoio disponibilizados pelos canais oficiais do CEFET, sobretudo o MS Teams. Há diversas fontes sobre a disciplina, tais como <a href="https://www.w3schools.com/">W3Schools</a>, <a href="https://www.udemy.com/course/gratis-html-primeiros-passos-na-carreira-de-desenvolvedor/learn/lecture/17326108#overview">Udemy</a> e outros tantos canais recomendados durante as aulas, como por exemplo:
+            </p>
+            <ul class="bullets">
+                <li><a href="http://www.k19.com.br/downloads/apostilas/basica/k19-k02-desenvolvimento-web-com-html-css-e-javascript">Apostila K19 - Desenvolvimento Web com HTML, CSS e Javascript</a></li>
+				<li><a href="https://www.caelum.com.br/apostila-html-css-javascript">Caelum - Desenvolvimento Web com HTML, CSS e JavaScript</a></li>
+				<li><a href="https://w3schools.com/jquery">W3Schools - Curso de jQuery</a></li>
+            </ul>
+
+			<h3>Exemplos</h3>
+			<ol>
+				<li><h3>Simplificando o código com jQuery:</h3>
+					<h4>JavaScript puro:</h4>
+					<pre>document.getElementById(“teste”).value = 5;</pre>
+					
+					<h4>Mesmo código em JQuery:</h4>
+					<pre>$(“#teste”).val(5);</pre>
+				</li>
+				<li><h3>Manipulação de eventos</h3>
+					<p>
+						Ao passar o mouse sobre a caixa, ela muda de cor. Ao retirar o mouse de cima, ela retorna a cor inicial.
+					</p>
+					<div class="exemplo">.exemplo</div>
+
+					<h4>Código:</h4>
+					<pre>
+$(function(){
+	$("#jquery_exemplo2").mouseover(function(){
+		$(this).css('background-color', '#dc143c');
+	});
+	$("#jquery_exemplo2").mouseleave(function(){
+		$(this).css('background-color', '#6495ed');
+	});
+})
+					</pre>
+
+					<p>ou:</p>
+					<pre>
+$(function(){
+	$("#jquery_exemplo2").on({
+		mouseover:function(){
+			$(this).css('background-color', '#dc143c');
+		},
+		mouseleave:function(){
+			$(this).css('background-color', '#6495ed');
+		}
+	});
+})
+					</pre>
+
+				</li>
+				<li><h3>Exibindo/ocultando elementos</h3>
+					<button id="bt3_ocultar">Ocultar</button>
+					<button id="bt3_aparecer">Fazer Aparecer</button>
+					<button id="bt3_revezar">Revezar</button>
+					<div class="exemplo">.exemplo</div>
+					<p>Código:</p>
+					<pre>
+<em>//dentro do document.ready</em>
+$("#bt3_ocultar").click(function(){
+	$(".exemplo").hide();
+})
+$("#bt3_aparecer").click(function(){
+	$(".exemplo").show(200);
+})
+$("#bt3_revezar").click(function(){
+	$(".exemplo").toggle(500);
+})	
+					</pre>
+				</li>
+
+				<li><h3>Desaparecer/Aparecer/Alternar</h3>
+					<button id="bt4_ocultar">Desaparecer</button>
+					<button id="bt4_aparecer">Aparecer aos poucos</button>
+					<button id="bt4_revezar">Alternar</button>
+					<div class="exemplo">.exemplo</div>
+				</li>
+				<p>Código:</p>
+				<pre>
+<em>//dentro do document.ready</em>
+$("#bt4_desaparecer").click(function(){
+	$(".exemplo").fadeOut();
+})
+$("#bt4_aparecer").click(function(){
+	$(".exemplo").fadeIn(200);
+})
+$("#bt4_revezar").click(function(){
+	$(".exemplo").fadeToggle(500);
+})
+				</pre>
+				<li><h3>Deslizar</h3>
+					<button id="bt5_ocultar">Abaixo</button>
+					<button id="bt5_aparecer">Para cima</button>
+					<button id="bt5_revezar">Alternar</button>
+					<div class="exemplo">.exemplo</div>
+				
+				<p>Código:</p>
+				<pre>
+<em>//dentro do document.ready</em>
+$("#bt5_ocultar").click(function(){
+	$(".exemplo").slideDown();
+})
+$("#bt5_aparecer").click(function(){
+	$(".exemplo").slideUp(200);
+})
+$("#bt5_revezar").click(function(){
+	$(".exemplo").slideToggle(500);
+})
+</pre>
+				</li>
+			</ol>
+		</div>
+		
+		<footer id="copyright">
+			<img src="../images/cefet.png">
+			<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</span>
+		</footer>
+	</main>
+</div>
+</body>
+</html>
