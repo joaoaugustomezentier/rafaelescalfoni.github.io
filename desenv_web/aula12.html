@@ -35,51 +35,6 @@ Released   : 20130902
 
 	<script>
 		$(function(){
-			/*
-			$("#jquery_exemplo2").mouseover(function(){
-				$(this).css('background-color', '#dc143c');
-			});
-			$("#jquery_exemplo2").mouseleave(function(){
-				$(this).css('background-color', '#6495ed');
-			});
-			*/
-			$(".exemplo").on({
-				mouseover:function(){
-					$(this).css('background-color', '#dc143c');
-				},
-				mouseleave:function(){
-					$(this).css('background-color', '#6495ed');
-				}
-			});
-			$("#bt3_ocultar").click(function(){
-				$(".exemplo").hide();
-			})
-			$("#bt3_aparecer").click(function(){
-				$(".exemplo").show(200);
-			})
-			$("#bt3_revezar").click(function(){
-				$(".exemplo").toggle(500);
-			})
-				
-			$("#bt4_ocultar").click(function(){
-				$(".exemplo").fadeOut();
-			})
-			$("#bt4_aparecer").click(function(){
-				$(".exemplo").fadeIn(200);
-			})
-			$("#bt4_revezar").click(function(){
-				$(".exemplo").fadeToggle(500);
-			})
-
-			$("#bt5_ocultar").click(function(){
-				$(".exemplo").slideDown();
-			})
-			$("#bt5_aparecer").click(function(){
-				$(".exemplo").slideUp(200);
-			})
-			$("#bt5_revezar").click(function(){
-				$(".exemplo").slideToggle(500);
-			})
 			
 		})
 	</script>
@@ -123,15 +78,28 @@ Released   : 20130902
 				<span class="byline">Horário das reuniões: quartas-feiras, 10:55 - 11:35</span>
 			</div>
 			<nav class="breadcrumb">
-				<span class="byline"><a href="../ensino.html">Ensino</a> >> <a href="../prog-clientes-web-2020_1.html">Programação de Clientes Web</a> >> Aula 11</span>
+				<span class="byline"><a href="../ensino.html">Ensino</a> >> <a href="../prog-clientes-web-2020_1.html">Programação de Clientes Web</a> >> Aula 12</span>
 			</nav>
-			<h3>Aula 11 - jQuery</h3>
+			<h3>Aula 12 - Manipulando o DOM com jQuery</h3>
 			<p>
-				Nesta aula, iremos apresentar o framework jQuery.
+                Nesta aula, iremos aprender a manipular o DOM dinamicamente com o jQuery.
             </p>
+            <p>
+                Página com exemplos: <a href="./exemplos/aula_12_exemplos.html">link</a>.
+            </p>
+            <h3>Exemplos de aula</h3>
+            <ul>
+                <li><a href="./aula12/aula_12_exemplos.html">Exemplo de aula</a></li>
+                <li><a href="./aula12/index.html">Cafeteria</a></li>
+            </ul>
             <h3>Vídeo aula</h3>
             <p>
-                Assista a vídeo aula disponível no <a href="https://web.microsoftstream.com/video/1f1354f7-6163-4936-8b09-0c939aa56464">link</a>. 
+                Assista a vídeo aula disponível nos links: <a href="https://web.microsoftstream.com/video/26c1ab6d-402a-41ce-b901-9205db645522">Parte 1</a>, 
+                <a href="https://web.microsoftstream.com/video/95cd28d6-f210-4f4b-b140-62428b36fbb7">Parte 2</a>, 
+                <a href="https://web.microsoftstream.com/video/ec78c39c-9297-4326-9d82-240bf3e3e6fd">Parte 3</a>,
+                <a href="https://web.microsoftstream.com/video/30ea6990-d8cd-47ac-97bf-c763087465fc">Parte 4</a> e 
+                <a href="https://web.microsoftstream.com/video/28367b4d-9b93-468e-9516-b92d0bbb3132">Parte 5</a>. 
+                <a href="https://web.microsoftstream.com/video/75adfb4a-71d3-4317-bfdc-a8c7bab64a20">Exemplo da cafeteria</a>.
             </p>
             <p>
                 Bons estudos e até quarta!
@@ -149,105 +117,47 @@ Released   : 20130902
 
 			<h3>Exemplos</h3>
 			<ol>
-				<li><h3>Simplificando o código com jQuery:</h3>
-					<h4>JavaScript puro:</h4>
-					<pre>document.getElementById(“teste”).value = 5;</pre>
-					
-					<h4>Mesmo código em JQuery:</h4>
-					<pre>$(“#teste”).val(5);</pre>
-				</li>
-				<li><h3>Manipulação de eventos</h3>
-					<p>
-						Ao passar o mouse sobre a caixa, ela muda de cor. Ao retirar o mouse de cima, ela retorna a cor inicial.
-					</p>
-					<div class="exemplo">.exemplo</div>
+				<li><h3>Métodos text() e val() :</h3>
+                    <p>O método text() permite buscar o conteúdo textual de uma marcação p, span e de parágrafo. Por sua vez, o método val() obtém o valor de elementos de entrada (inputs e textarea)</p>
+					<h4>Recuperando o conteúdo do parágrafo de id=mensagem:</h4>
+                    <pre>$(“#mensagem”).text();</pre>
+                    <p>Neste caso, se &lt;p id="mensagem"&gt; tiver marcações internas, o método ignorará, trazendo APENAS o texto.</p>
+                    <pre>
+&lt;p id='mensagem'&gt;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. &lt;strong&gt;Nulla 
+sodales tempor pretium.&lt;/strong&gt;
+&lt;/p&gt;
+                    </pre>
+                    Resultado do <pre>$(“#mensagem”).text();</pre>
+<pre>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales 
+tempor pretium.</pre>
+<p id="mensagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Nulla 
+    sodales tempor pretium.</strong></p>
 
-					<h4>Código:</h4>
-					<pre>
-$(function(){
-	$("#jquery_exemplo2").mouseover(function(){
-		$(this).css('background-color', '#dc143c');
-	});
-	$("#jquery_exemplo2").mouseleave(function(){
-		$(this).css('background-color', '#6495ed');
-	});
-})
-					</pre>
+                    <p>Os métodos text() e val() também podem ser usados para alterar o valor de elementos, bastando passar o valor como parâmetro:</p>
+                    <pre>
+$("#mensagem").text("novo valor")
 
-					<p>ou:</p>
-					<pre>
-$(function(){
-	$("#jquery_exemplo2").on({
-		mouseover:function(){
-			$(this).css('background-color', '#dc143c');
-		},
-		mouseleave:function(){
-			$(this).css('background-color', '#6495ed');
-		}
-	});
-})
-					</pre>
+&lt;p id='mensagem'&gt;
+novo valor
+&lt;/p&gt;
+                    </pre>
+				</li>
+                <li>
+                    <h3>Considerando as marcações internas com html()</h3>
+                <p>O método html() retorna o conteúdo de um elemento com todos os seus elementos internos, não apenas o seu texto.</p>
+                <pre>$(“#mensagem”).html();
 
-				</li>
-				<li><h3>Exibindo/ocultando elementos</h3>
-					<button id="bt3_ocultar">Ocultar</button>
-					<button id="bt3_aparecer">Fazer Aparecer</button>
-					<button id="bt3_revezar">Revezar</button>
-					<div class="exemplo">.exemplo</div>
-					<p>Código:</p>
-					<pre>
-<em>//dentro do document.ready</em>
-$("#bt3_ocultar").click(function(){
-	$(".exemplo").hide();
-})
-$("#bt3_aparecer").click(function(){
-	$(".exemplo").show(200);
-})
-$("#bt3_revezar").click(function(){
-	$(".exemplo").toggle(500);
-})	
-					</pre>
-				</li>
-
-				<li><h3>Desaparecer/Aparecer/Alternar</h3>
-					<button id="bt4_ocultar">Desaparecer</button>
-					<button id="bt4_aparecer">Aparecer aos poucos</button>
-					<button id="bt4_revezar">Alternar</button>
-					<div class="exemplo">.exemplo</div>
-				</li>
-				<p>Código:</p>
-				<pre>
-<em>//dentro do document.ready</em>
-$("#bt4_desaparecer").click(function(){
-	$(".exemplo").fadeOut();
-})
-$("#bt4_aparecer").click(function(){
-	$(".exemplo").fadeIn(200);
-})
-$("#bt4_revezar").click(function(){
-	$(".exemplo").fadeToggle(500);
-})
-				</pre>
-				<li><h3>Deslizar</h3>
-					<button id="bt5_ocultar">Abaixo</button>
-					<button id="bt5_aparecer">Para cima</button>
-					<button id="bt5_revezar">Alternar</button>
-					<div class="exemplo">.exemplo</div>
-				
-				<p>Código:</p>
-				<pre>
-<em>//dentro do document.ready</em>
-$("#bt5_ocultar").click(function(){
-	$(".exemplo").slideDown();
-})
-$("#bt5_aparecer").click(function(){
-	$(".exemplo").slideUp(200);
-})
-$("#bt5_revezar").click(function(){
-	$(".exemplo").slideToggle(500);
-})
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. &lt;strong&gt;Nulla 
+sodales tempor pretium.&lt;/strong&gt;
 </pre>
-				</li>
+                <p>Também funciona para alterar valores:</p>
+                <pre>
+$("#mensagem").html("novo &lt;strong&gt;valor&lt;/strong&gt;")              
+&lt;p id='mensagem'&gt;
+</pre>novo <strong>valor</strong>;
+<pre>&lt;/p&gt;</pre>
+            </li>
 			</ol>
 		</div>
 		

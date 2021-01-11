@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 12 - Manipulação do DOM</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        .quadrado {
+            background-color:#6495ed;
+            width: 150px;
+            height: 150px;
+        }
+        .circulo {
+            background-color:#6495ed;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .vermelho {
+            background-color: #f00;
+        }
+        .trash {
+            width:20px;
+            height: 20px;
+         }
+    </style>
+    <script>
+        //document.ready(função callback)
+        $(function(){
+            $("#teste1").click(function(){
+                let mensagem = $("#teste").val();
+                $("#msg_resp1").html(mensagem);
+            })
+
+            $("#exemplo2_borda").click(function(){
+                // #teste_css{ border: 5px solid #f00;}
+                $("#teste_css").css("border","5px solid #f00");
+            })
+
+            $("#exemplo2_link").click(function(){
+                let propriedades = {"href": "https://google.com"
+                        , "tooltip": "Acesse o Google por aqui"}
+                $("#link").attr(propriedades);
+            })
+
+            $("#teste_classe").click(function(){
+                $(this).removeClass("quadrado");
+                $(this).addClass("circulo");
+                $(this).addClass("vermelho");
+            })
+
+            $("#add_item").click(function(){
+                let obj_img = $("<img>").attr("src", "./img/lixeira.png");
+                obj_img.addClass("trash");
+                let obj_link = $("<a>").attr("href", "#");
+                obj_link.append(obj_img);
+                let obj_li = $("<li>").text($("#item_lista").val());
+                obj_li.append(obj_link);
+                $("#lista").append(obj_li);
+                $("#item_lista").val("")
+            })
+
+            $("#clear_list").click(function(){
+                $("#lista").empty();
+            })
+
+            $("#lista").on("click", "img", function(){
+                $(this).parents("#lista li").remove();
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>Aula 12 - Manipulação do DOM</h1>
+    <ol>
+        <li><h3>text(), val() e html()</h3>
+
+<input type="text" id= "teste">
+<button id="teste1">Testar</button>
+<p id="msg_resp1">
+
+</p>
+        </li>
+        <li><h3>Alterando propriedades CSS</h3>
+            <div id="teste_css" class="quadrado"></div>
+            <button id="exemplo2_borda">Adicionar bordas</button>
+            <br>
+            <input type="text" id="cor" placeholder="Entre com uma cor">
+            <button id="exemplo2_cor">Alterar cor</button>
+            <a id="link">Link novo</a>
+            <button id="exemplo2_link">Atribuir link</button>
+        </li>
+        <li><h3>Alterando classes CSS</h3>
+            <div id="teste_classe" class="quadrado"></div>
+            
+        </li>
+        <li><h3>Adicionando/remover elementos dinamicamente</h3>
+            <input type="text" id="item_lista">
+            <button id="add_item">Adicionar</button>
+            <button id="clear_list">Limpar Lista</button>
+            <h4>Lista de Compras</h4>
+            <ul id="lista">
+                
+
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>
