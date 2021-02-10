@@ -1,0 +1,22 @@
+h1 {
+    color:red;
+    font-size:2em;
+}
+.resumo {
+    font-style: italic;
+}
+main p { /* descendentes diretos e indiretos*/
+    text-align: justify;
+}
+
+main > p { /*descendente direto (filho) */
+    text-align: center;
+}
+
+#intro {
+    background-color: rgba(255, 5, 5, 1);
+}
+
+section {
+    background-color:#88f;
+}

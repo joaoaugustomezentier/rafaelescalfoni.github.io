@@ -1,0 +1,16 @@
+body {
+    color: rgb(30, 51, 76);
+    background: #ddd url(../img/fundo.jpg) top right repeat-x;
+}
+
+#intro {
+    width:300px; 
+    border: 1px solid #000;
+    margin:0 auto;
+    padding: 10px;
+    
+}
+
+#intro h2 {
+    margin:0;
+}
