@@ -1,0 +1,52 @@
+* {
+    font-family: "Times New Roman", Verdana, Tahoma, sans-serif;
+}
+h1  {
+    text-align: center;
+}
+h1 + h2 {
+    text-align: right;
+}
+a {
+    color:darkorange;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration:underline;
+    font-weight: bold;
+}
+
+a:visited{ 
+    color:darkred;
+}
+
+li {
+    border-top: 1px solid #000;
+}
+
+li:last-child {
+    border-bottom:  1px solid #000;
+}
+li:nth-last-child(1) {
+    background-color:deeppink;
+}
+
+p::first-letter {
+    font-size:3em;
+    float:left;
+}
+input::placeholder {
+    font-size:0.7em;
+}
+
+body > p {
+    color:#00f;
+}
+
+h2 ~ p {
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
