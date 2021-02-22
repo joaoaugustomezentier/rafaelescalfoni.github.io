@@ -1,0 +1,2 @@
+yaakovGreeter.sayHello();
+johnGreeter.sayHi();
