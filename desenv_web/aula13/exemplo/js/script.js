@@ -3,12 +3,13 @@ $(function(){
     $.get(url, function(data){
         console.log(data);
         $.each(data, function(index, receita){
-            criarReceita(receita.titulo, receita.foto, receita.ingredientes, receita.preparo)
+            let $divReceita = criarReceita(receita.nome, receita.descricao, receita.foto, receita.ingredientes, receita.preparo)
+            $("main").append($divReceita);
         })
     });
 })
 
-function criarReceita(titulo, foto, ingredientes, preparo){
+function criarReceita(titulo, descricao, foto, ingredientes, preparo){
     //criando uma div.receita
     let $receita = $("<div>").addClass("receita");
     let $figure = $("<figure>")
@@ -16,9 +17,11 @@ function criarReceita(titulo, foto, ingredientes, preparo){
                         .attr("src", foto)
                         .attr("alt", titulo)
                     )
-                    .append($("<figcaption>").text(titulo))
+                    .append($("<figcaption>").text(titulo));
+
     let $titulo = $("<h3>").text(titulo);
-    let $listaIngredientes = $("ul");
+    let $descricao = $("<p>").text(descricao);
+    let $listaIngredientes = $("<ul>");
     let $listaPreparo = $("<ol>");
     $.each(ingredientes, function(index, item){
         $listaIngredientes.append($("<li>").text(item))
@@ -28,8 +31,10 @@ function criarReceita(titulo, foto, ingredientes, preparo){
     });
     $receita.append($figure);
     $receita.append($titulo);
-    $receita.appent($("<h4>").text("Ingredientes"));
+    $receita.append($descricao);
+    $receita.append($("<h4>").text("Ingredientes"));
     $receita.append($listaIngredientes);
     $receita.append($("<h4>").text("Preparo"));
     $receita.append($listaPreparo);
+    return $receita;
 }

@@ -18,7 +18,7 @@ main {
     width: 85%;
     background-color: #fff;
     margin: 0 auto;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .receita {
@@ -26,7 +26,7 @@ main {
     border: 1px solid #aaa;
     border-radius: 5px;
     margin: auto;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     padding: 10px 15px;
     box-shadow: 1px 4px 5px #000;
     box-sizing: border-box;
@@ -48,8 +48,16 @@ main {
     text-align: center;
     margin:0 10px 15px;
     padding: 10px 0;
+    padding-right: 5px;
+
+    border-bottom: #aaa solid 1px;
     border-right: #aaa solid 1px;
-    box-shadow: 1px 0px 1px #aaa;
+    box-shadow: 1px 1px 1px #aaa;
+}
+
+.receita figcaption {
+    font-size: 0.7em;
+    font-weight: bold;
 }
 
 .receita img {
@@ -57,7 +65,6 @@ main {
 }
 
 .receita h3 {
-    text-align: center;
     margin: 10px 0;
 }
 
