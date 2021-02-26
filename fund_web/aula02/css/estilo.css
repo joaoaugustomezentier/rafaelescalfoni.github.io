@@ -1,0 +1,119 @@
+/*
+label, input[type=text] {
+    display:block;
+}
+
+input[type=text] {
+    width: 400px;
+}
+
+input {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+*/
+
+* {
+    font-family: "Times New Roman", Roboto, sans-serif;
+}
+
+body {
+    background:rgba(188, 205, 214, 1) url(../img/fig01.png) no-repeat center top;
+    margin:0;
+}
+
+/* header section */
+header {
+    background-color:#fff;
+}
+
+header h1, header p {
+    margin: 0;
+    text-align: center;
+    
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    margin-bottom:50px;
+    font-style:italic;
+}
+
+nav {
+    background-color:rgb(219, 229, 236);
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left:0;
+    margin: 0 auto;
+    width: 85%;
+    padding:20px 10px;
+}
+
+nav li {
+    display:inline;
+    font-size:0.9em;
+    padding-right:15px;
+}
+nav li:hover{ 
+    background-color: rgb(188, 205, 214)
+}
+
+nav a {
+    color: #222;
+    text-decoration: none;
+}
+
+nav a:active {
+    color:#ffd700;
+}
+/* end header section */
+
+/* main section */
+#main {
+    width: 85%;
+    background-color: #fff;
+    margin:0 auto;
+    box-sizing:border-box;
+    padding: 20px 15px;
+}
+
+#main h2 {
+    margin:0;
+    text-align:center;
+}
+
+#main p {
+    margin: 10px 15px;
+}
+.intro {
+    font-size:0.9em;
+    font-style:italic;
+    text-align:center;
+}
+.box {
+    background-color:rgb(219, 229, 236);
+    border:2px rgb(188, 205, 214) solid ;
+    margin: 10px;
+    float:left;
+    width: 46%;
+    padding:10px;
+    box-sizing:border-box;
+}
+
+.box figure {
+    float:left;
+    text-align:center;
+}
+
+.box figcaption {
+    font-size:0.7em;    
+}

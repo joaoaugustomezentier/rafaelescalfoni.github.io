@@ -1,0 +1,71 @@
+body {
+    margin:0;
+    background-color: #333;
+}
+
+header {
+    height: 60px;
+    background-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 20px
+}
+
+header h1 {
+    text-align: center;
+}
+
+main {
+    width: 85%;
+    background-color: #fff;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.receita {
+    width: 90%;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    box-shadow: 1px 4px 5px #000;
+    box-sizing: border-box;
+}
+
+.receita::after {
+    content: " ";
+    display: block;
+    height: 0px;
+    clear: both;
+    font-size: 0;
+    visibility: hidden;
+}
+
+.receita figure {
+    margin:0;
+    float: left;
+    width: 100px;
+    text-align: center;
+    margin:0 10px 15px;
+    padding: 10px 0;
+    border-right: #aaa solid 1px;
+    box-shadow: 1px 0px 1px #aaa;
+}
+
+.receita img {
+    width:inherit;
+}
+
+.receita h3 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.receita p, .receita li {
+    font-size: 0.8em;
+}
+
+.receita h4 {
+    margin: 5px;
+}
+
