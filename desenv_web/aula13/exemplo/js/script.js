@@ -1,14 +1,15 @@
-$(function(){
+$(function(){ //document.ready
     var url = "https://rafaelescalfoni.github.io/desenv_web/receitas.json";
     $.get(url, function(data){
         console.log(data);
+        //jQuery.each(array, function(indice, obj))
         $.each(data, function(index, receita){
             let $divReceita = criarReceita(receita.nome, receita.descricao, receita.foto, receita.ingredientes, receita.preparo)
             $("main").append($divReceita);
         })
     });
 })
-
+// hoisting "içamento"
 function criarReceita(titulo, descricao, foto, ingredientes, preparo){
     //criando uma div.receita
     let $receita = $("<div>").addClass("receita");
